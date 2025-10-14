@@ -1,9 +1,9 @@
 <script setup>
 import { themeColor, contactInfo } from "../data/items";
 
-const heading = "Get In Touch";
+const heading = "Contáctanos";
 const subHeading = "Far from the countries Vokalia and Consonantia";
-const contactInfoHeading = "Contact Information";
+const contactInfoHeading = "Información de Contacto";
 const buttonSendMessage = "Send Message";
 const labels = {
   firstName: "First Name",

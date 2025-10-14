@@ -1,5 +1,9 @@
 <script setup>
 import mainPhoto from "../assets/images/service2.jpg";
+import photo_1 from "../assets/images/1.jpg";
+import photo_2 from "../assets/images/2.jpg";
+import photo_3 from "../assets/images/3.jpg";
+import photo_4 from "../assets/images/4.jpg";
 const items = [
   {
     id: 1,
@@ -149,19 +153,19 @@ const total = 4;
             <div class="owl-single no-dots owl-carousel">
               <div class="item">
                 <span class="number">{{ items[0].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="photo_1" alt="Image" class="img-fluid" />
               </div>
               <div class="item">
                 <span class="number">{{ items[1].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="photo_2" alt="Image" class="img-fluid" />
               </div>
               <div class="item">
                 <span class="number">{{ items[2].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="photo_3" alt="Image" class="img-fluid" />
               </div>
               <div class="item">
                 <span class="number">{{ items[3].id }}/{{ total }}</span>
-                <img :src="mainPhoto" alt="Image" class="img-fluid" />
+                <img :src="photo_4" alt="Image" class="img-fluid" />
               </div>
             </div>
           </div>

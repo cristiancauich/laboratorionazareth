@@ -1,10 +1,10 @@
 <script setup>
-import mainPhoto from "../assets/images/hero.svg";
+import mainPhoto from "../assets/images/hero2.jpg";
 import { themeColor } from "../data/items";
 
-const heroHeading = "Promote Your Products by Colorlib";
+const heroHeading = "Obten un diagnóstico oportuno";
 const buttonSeeFeature = "See Features";
-const buttonPricing = "Pricing";
+const buttonPricing = "Destacados";
 </script>
 
 <template>
@@ -27,17 +27,13 @@ const buttonPricing = "Pricing";
               </h1>
               <div class="excerpt" data-aos="fade-up" data-aos-delay="100">
                 <p>
-                  Another cool free html css template by
-                  <span
-                    style="
-                      background-color: rgba(64, 123, 255, 0.07);
-                      color: #407bff;
-                    "
-                    >Colorlib</span
-                  >
-                  Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind texts.
-                  Separated they live in Bookmarksgrove right at the coast
+                  Queremos que cuides de ti y de los tuyos, por eso contamos
+                  con la mejor atención especializada con resultados precisos
+                  y rápidos.
+                  <br>
+                  Por el place de brindar
+                  un servicio que ayude a preservar
+                  la salud.
                 </p>
               </div>
               <p data-aos="fade-up" data-aos-delay="200">

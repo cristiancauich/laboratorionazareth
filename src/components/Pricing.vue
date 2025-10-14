@@ -2,19 +2,19 @@
 import { themeColor } from "../data/items";
 const heading = "Pricing";
 const subHeading = "Pricing for everyone. Choose your plan now!";
-const startButtonName = "Get Started";
+const startButtonName = "Agendar cita";
 const packages = [
   {
-    name: "Free",
-    price: "0",
+    name: "Check Up Basico",
+    price: "350.00",
   },
   {
-    name: "Standard",
-    price: "19.99",
+    name: "Papanicolao",
+    price: "380.00",
   },
   {
-    name: "Premium",
-    price: "79.99",
+    name: "Perfil Tirodeo",
+    price: "599.00",
   },
 ];
 </script>

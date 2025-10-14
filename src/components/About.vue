@@ -24,17 +24,15 @@ const totalTeam = "20";
           </div>
           <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove right at the coast
+              
+              Somos un laboratorio de análisis clínicos comprometidos con la salud y el bienestar de nuestros pacientes. 
+              
             </p>
             <p>
-              Separated they
+              Nuestro equipo de profesionales altamente capacitados utiliza la
               <span class="highlight"
-                >live in Bookmarksgrove right at the coast of the
-                Semantics</span
-              >, a large language ocean. A small river named Duden flows by
-              their place and supplies it with the necessary regelialia.
+                >tecnología más avanzada</span
+              > para obtener resultados precisos y confiables..
             </p>
           </div>
           <ul

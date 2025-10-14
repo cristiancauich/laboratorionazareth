@@ -1,10 +1,10 @@
 <script setup>
 import { themeColor } from "../data/items";
 import personPhoto from "../assets/images/person_1.jpg";
-import mainPhoto from "../assets/images/service1.jpg";
+import mainPhoto from "../assets/images/result.jpg";
 
-const service1Heading = "Digital Services";
-const service1SubHeading = "Selling Digital Services";
+const service1Heading = "Resultado Digital";
+const service1SubHeading = "Resultados con Válidacion QR";
 const service1Quote =
   '"Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia."';
 const personName = "James Anderson";
@@ -60,7 +60,7 @@ function youtubeVideoUrl() {
           </div>
         </div>
         <div class="col-lg-7" data-aos="fade-up" data-aos-delay="400">
-          <a :href="youtubeVideoUrl()" class="btn-video" data-fancybox>
+          <a  class="btn-video" data-fancybox>
             <span class="wrap-icon-play">
               <svg
                 class="bi bi-play-fill"
@@ -75,7 +75,7 @@ function youtubeVideoUrl() {
                 />
               </svg>
             </span>
-            <img :src="mainPhoto" alt="Image" class="img-fluid img-shadow" />
+            <img max-width="80%" :src="mainPhoto" alt="Image" class="img-fluid img-shadow" />
           </a>
         </div>
       </div>

@@ -1,12 +1,12 @@
-const themeColor = '#407BFF'
-const siteName = 'Launch'
+const themeColor = '#07c1e6'
+const siteName = 'Nazareth'
 
 const contactInfo = {
-    address: '43 Raymouth Rd. Baltemoer, London 3910',
-    phone1: '+1(123)-456-7890',
-    phone2: '+1(123)-456-7890',
+    address: 'Supermanzana 76, 77527 Cancún, Q.R.',
+    phone1: '+52 998 324 6449',
+    phone2: '+52 998 219 9967',
     email: 'info@mydomain.com',
-    website: 'https://yourwebsite.com/'
+    website: 'https://www.facebook.com/laboratorio.nazareth/'
 }
-
+ 
 export { themeColor, siteName, contactInfo }
