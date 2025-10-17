@@ -1,6 +1,6 @@
-# Amazing Vue 3 Landing Page
+# Laboratorio de Analisis Clinicos NAzareth Landing Page
 
-Welcome to our amazing Vue 3 landing page! This impressive landing page has been meticulously crafted using the latest Vue.js 3 features and directives, showcasing the power and versatility of Vue.js in modern web development.
+Welcome to our Laboratorio de Analisis Clinicos NAzareth Landing Page! This impressive landing page has been meticulously crafted using the latest Vue.js 3 features and directives, showcasing the power and versatility of Vue.js in modern web development.
 
 ## Key Features
 
