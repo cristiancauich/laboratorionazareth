@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.transitioning {
+		@apply transition-all duration-200 ease-in-out;
+	}
+
+	.link-underline {
+		@apply 	relative after:content-[''] after:w-0 after:h-px after:bg-primary after:absolute after:right-0 after:-bottom-0.5 
+				after:transitioning hover:after:right-auto hover:after:left-0 hover:after:w-full;
+	}
+
+	#sidebar.is-scrolling {
+		@apply !top-[72px];
+	}
+    
+	.menu a.active {
+		@apply text-tertiary xl:text-primary after:hidden bg-secondary/10 xl:bg-transparent;
+	}
+}
