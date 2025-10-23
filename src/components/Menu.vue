@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+    import searchFileIcon from "../components/icons/searchFile.vue"
+</script>
 
 <template>
     <li>
@@ -27,7 +29,8 @@
         </a>
     </li>
     <li>
-        <a href="/#inicio" class="flex items-center justify-center py-3 px-6 rounded-xl bg-tertiary font-semibold text-secondary text-center transitioning hover:bg-secondary hover:text-tertiary">
+        <a href="/#inicio" class="flex items-center justify-center gap-2 md:gap-3 py-3 px-6 rounded-xl bg-tertiary font-medium text-secondary uppercase transitioning hover:bg-secondary hover:text-tertiary">
+            <searchFileIcon class="size-6 md:size-8" />
             Consulta tus <br class="hidden md:inline"/>resultados aquí
         </a>
     </li>

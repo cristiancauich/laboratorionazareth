@@ -21,3 +21,26 @@
 		@apply text-tertiary xl:text-primary after:hidden bg-secondary/10 xl:bg-transparent;
 	}
 }
+
+#main-slider {
+    --swiper-theme-color: #FFFFFF;
+	--swiper-navigation-size: 16px;
+}
+
+@media (min-width: 640px) {
+	#main-slider {
+		--swiper-navigation-size: 24px;
+	}
+}
+
+@media (min-width: 1024px) {
+	#main-slider {
+		--swiper-navigation-size: 32px;
+	}
+}
+
+@media (min-width: 1280px) {
+	#main-slider {
+		--swiper-navigation-size: 40px;
+	}
+}

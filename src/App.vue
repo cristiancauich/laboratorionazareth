@@ -11,19 +11,11 @@ import About from "./components/About.vue";
 import Blog from "./components/Blog.vue";
 import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
+import Slider from "./components/Slider.vue";
 </script>
 
 <template>
   <Header />
-  <Hero />
-  <Service1 />
-  <Service2 />
-  <Feature />
-  <Pricing />
-  <Advantage />
-  <Testimonial />
-  <About />
-  <Blog />
-  <Contact />
+  <Slider />
   <Footer />
 </template>

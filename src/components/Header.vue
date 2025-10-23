@@ -15,9 +15,10 @@
 
   const toggleSidebar = () => (isOpen.value = !isOpen.value)
   const closeSidebar = () => (isOpen.value = false)
+  const header = ref(null);
 
   const handleScroll = () => {
-    isSticky.value = window.scrollY > 20
+    isSticky.value = window.scrollY < header.value.clientHeight ? false : true;
   }
 
   onMounted(() => {
@@ -30,7 +31,7 @@
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white transitioning after:hidden after:md:block after:content-[''] after:absolute after:w-full after:h-12 after:left-0 after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning" :class="isSticky ? 'shadow-lg after:h-0' : null">
+  <header ref="header" class="sticky top-0 left-0 w-full z-50 bg-white overflow-hidden transitioning after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning" :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'">
     <div class="container mx-auto px-4 flex flex-row items-center gap-6 py-3 md:pt-0 transitioning" :class="isSticky ? 'md:pb-4' : 'md:pb-6 md:items-end'">
       <a href="/">
         <img :src="logo" :alt="siteName" width="162" height="144" class="w-auto transitioning" :class="isSticky ? 'h-12 md:h-16 lg:h-20 xl:h-20 2xl:h-24 md:mt-4' : 'h-16 md:h-20 lg:h-28 xl:h-32 2xl:h-36'">
