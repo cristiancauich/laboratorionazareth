@@ -59,7 +59,7 @@
         </div>
 
         <div class="flex flex-row items-center justify-end transitioning" :class="isSticky ? 'md:mt-4' : 'lg:mt-8'">
-          <ul class="menu hidden xl:flex flex-row items-center gap-x-12">
+          <ul class="menu hidden xl:flex flex-row items-center gap-x-10 2xl:gap-x-12">
             <Menu />
           </ul>
 
