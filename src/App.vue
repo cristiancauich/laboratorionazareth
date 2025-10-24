@@ -6,6 +6,7 @@ import AnalysisSearch from "./components/AnalysisSearch.vue";
 import Packs from "./components/Packs.vue";
 import Banner from "./components/Banner.vue";
 import Contact from "./components/Contact.vue";
+import Slogan from "./components/Slogan.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
@@ -18,6 +19,7 @@ import Footer from "./components/Footer.vue";
   <Packs />
   <Banner />
   <Contact />
+  <Slogan />
 
   <Footer />
 </template>

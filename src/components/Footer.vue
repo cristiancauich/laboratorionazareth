@@ -1,135 +1,105 @@
 <script setup>
-import { contactInfo } from "../data/items";
+	import { contactInfo, socials, siteName } from "../data/items"
+	import facebookIcon from "./icons/facebook.vue"
+	import instagramIcon from "./icons/instagram.vue"
+	import tiktokIcon from "./icons/tiktok.vue"
+	import whatsappIcon from "./icons/whatsapp.vue"
+	import locationIcon from "./icons/location.vue"
 
-const copyrightText = "Copyright 2023, All rights reserved.";
-const column1Heading = "About Launch";
-const column1Text =
-  "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.";
-const column2Heading = "Projects";
-const column3Heading = "Services";
-const column4Heading = "Contact";
-
-const connectHeading = "Connect";
-
-const socialItems = [
-  {
-    link: "https://www.instagram.com/",
-    icon: "icon-instagram",
-  },
-  {
-    link: "https://www.twitter.com/",
-    icon: "icon-twitter",
-  },
-  {
-    link: "https://www.facebook.com/",
-    icon: "icon-facebook",
-  },
-  {
-    link: "https://www.linkedin.com/",
-    icon: "icon-linkedin",
-  },
-  {
-    link: "https://www.pinterest.com/",
-    icon: "icon-pinterest",
-  },
-];
+	const logo = "/src/assets/images/logo.png"
 </script>
 
 <template>
-  <div class="site-footer">
-    <div class="footer-dots"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="widget">
-            <h3>{{ column1Heading }}</h3>
-            <p>{{ column1Text }}</p>
-          </div>
-          <div class="widget">
-            <h3>{{ connectHeading }}</h3>
-            <ul class="list-unstyled social">
-              <li style="margin-right: 4px">
-                <a :href="socialItems[0].link"
-                  ><span :class="socialItems[0].icon"></span
-                ></a>
-              </li>
-              <li style="margin-right: 4px">
-                <a :href="socialItems[1].link"
-                  ><span :class="socialItems[1].icon"></span
-                ></a>
-              </li>
-              <li style="margin-right: 4px">
-                <a :href="socialItems[2].link"
-                  ><span :class="socialItems[2].icon"></span
-                ></a>
-              </li>
-              <li style="margin-right: 4px">
-                <a :href="socialItems[3].link"
-                  ><span :class="socialItems[3].icon"></span
-                ></a>
-              </li>
-              <li>
-                <a :href="socialItems[4].link"
-                  ><span :class="socialItems[4].icon"></span
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-2 ml-auto">
-          <div class="widget">
-            <h3>{{ column2Heading }}</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">La Lega Stadium</a></li>
-              <li><a href="#">France Building</a></li>
-              <li><a href="#">22 New Homes</a></li>
-              <li><a href="#">Manage Center</a></li>
-              <li><a href="#">Sports Hall</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="widget">
-            <h3>{{ column3Heading }}</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">Architect</a></li>
-              <li><a href="#">Interior Design</a></li>
-              <li><a href="#">Landscape Design</a></li>
-              <li><a href="#">Consultancy</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="widget">
-            <h3>{{ column4Heading }}</h3>
-            <address>{{ contactInfo.address }}</address>
-            <ul class="list-unstyled links mb-4">
-              <li>
-                <a :href="'tel://' + contactInfo.phone1">{{
-                  contactInfo.phone1
-                }}</a>
-              </li>
-              <li>
-                <a :href="'tel://' + contactInfo.phone2">{{
-                  contactInfo.phone2
-                }}</a>
-              </li>
-              <li>
-                <a :href="'mailto:' + contactInfo.email"
-                  ><span>{{ contactInfo.email }}</span></a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 text-center">
-          <p>
-            {{ copyrightText }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+	<footer class="py-12 md:py-20 xl:py-24 bg-secondary text-white">
+		<div class="container mx-auto px-4">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-8">
+				<div class="md:col-span-2 lg:col-span-1">
+					<div class="w-full md:w-1/2 lg:w-full md:mx-auto lg:mx-0">
+						<img :src="logo" :alt="siteName" width="162" height="144" class="w-auto h-24 md:h-28 xl:h-32 2xl:h-36 mx-auto lg:mx-0">
+
+						<p class="text-center lg:text-start mt-4 lg:text-sm xl:text-base">
+							Somos un laboratorio de análisis clínicos comprometidos con la salud y el bienestar de nuestros pacientes.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col items-center lg:items-start gap-6 xl:gap-8">
+					<div class="font-medium text-lg md:text-xl xl:text-2xl text-primary">Enlaces directos</div>
+
+					<div class="flex flex-col items-center lg:items-start gap-3 xl:gap-4">
+						<a href="/#analisis-clinicos" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Análisis clínicos
+						</a>
+
+						<a href="/#promociones" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Promociones
+						</a>
+
+						<a href="/#paquetes" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Paquetes
+						</a>
+
+						<a href="/consulta-resultados" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Consulta resultados
+						</a>
+
+						<a href="/#contacto" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Contacto
+						</a>
+                    </div>
+				</div>
+
+				<div class="flex flex-col items-center lg:items-start gap-6 xl:gap-8">
+					<div class="font-medium text-lg md:text-xl xl:text-2xl text-primary">Contáctanos</div>
+
+					<div class="flex flex-col gap-3 xl:gap-4">
+						<div class="flex justify-center lg:justify-start gap-3">
+							<locationIcon class="size-5 text-primary mt-1 flex-none" />
+
+							<p class="font-montserrat text-white font-medium text-center lg:text-start">
+								{{ contactInfo.address }}
+							</p>
+						</div>
+
+                        <div class="flex justify-center lg:justify-start gap-3">
+							<whatsappIcon class="size-5 text-primary flex-none" />
+
+							<a :href="`https://wa.me/${contactInfo.whatsapp1}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+								{{ contactInfo.whatsapp1 }}
+							</a>
+						</div>
+
+                        <div class="flex justify-center lg:justify-start gap-3">
+							<whatsappIcon class="size-5 text-primary flex-none" />
+
+							<a :href="`https://wa.me/${contactInfo.whatsapp2}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+								{{ contactInfo.whatsapp2 }}
+							</a>
+						</div>
+                    </div>
+				</div>
+
+				<div class="md:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start gap-6 xl:gap-8">
+					<div class="font-medium text-lg md:text-xl xl:text-2xl text-primary">Redes sociales</div>
+
+					<div class="flex flex-row justify-center lg:justify-start gap-3">
+                        <a :href="socials.facebook" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                            <facebookIcon class="size-5" />
+                            <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">Facebook</span>
+                        </a>
+
+                        <a :href="socials.instagram" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                            <instagramIcon class="size-5" />
+                            <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">Instagram</span>
+                        </a>
+
+                        <a :href="socials.tiktok" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                            <tiktokIcon class="size-5" />
+                            <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">TikTok</span>
+                        </a>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </template>

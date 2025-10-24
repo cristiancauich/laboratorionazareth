@@ -2,7 +2,7 @@ const themeColor = '#07c1e6'
 const siteName = 'Nazareth'
 
 const contactInfo = {
-    address: 'Supermanzana 76, 77527 Cancún, Q.R.',
+    address: 'Avenida Revolución, Supermanzana 76, CP 77527, Cancún, Q.R.',
     whatsapp1: '998 155 1736',
     whatsapp2: '998 219 9967',
     email: 'info@mydomain.com',
