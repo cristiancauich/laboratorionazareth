@@ -15,12 +15,14 @@ import Slider from "./components/Slider.vue";
 import AnalysisSearch from "./components/AnalysisSearch.vue";
 import Packs from "./components/Packs.vue";
 import Banner from "./components/Banner.vue";
+import Marquee from "./components/Marquee.vue";
 </script>
 
 <template>
   <Header />
 
   <Slider />
+  <Marquee />
   <AnalysisSearch />
   <Packs />
   <Banner />
