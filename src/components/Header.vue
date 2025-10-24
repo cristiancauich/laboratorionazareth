@@ -39,10 +39,19 @@
 
       <div class="relative z-10 flex flex-col md:w-3/4 ml-auto transitioning">
         <div class="hidden md:flex items-center justify-between gap-4 transitioning" :class="isSticky ? 'py-0 h-0 overflow-hidden' : 'py-3 h-auto'">
-          <a :href="'tel:' + contactInfo.whatsapp" class="group flex items-center gap-3 font-montserrat text-white font-medium transitioning hover:text-secondary">
-            <whatsappIcon class="size-5 text-tertiary transitioning group-hover:text-secondary" />
-            {{ contactInfo.whatsapp }}
-          </a>
+          <div class="flex items-center gap-3">
+            <whatsappIcon class="size-5 text-tertiary" />
+
+            <a :href="`https://wa.me/${contactInfo.whatsapp1}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
+              {{ contactInfo.whatsapp1 }}
+            </a>
+
+            <span class="text-white">/</span>
+
+            <a :href="`https://wa.me/${contactInfo.whatsapp2}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
+              {{ contactInfo.whatsapp2 }}
+            </a>
+          </div>
 
           <div class="flex items-center gap-4">
             <span class="font-montserrat text-white">Síguenos:</span>

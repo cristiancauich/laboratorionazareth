@@ -76,7 +76,7 @@
 
                 <div class="md:col-span-5 xl:col-span-4 md:col-start-8 xl:col-start-9">
                     <label for="search_analysis" class="inline-block font-montserrat font-medium mb-1">Buscar análisis</label>
-                    <input type="text" class="w-full bg-white py-3 px-4 rounded-lg border border-light-gray outline-none font-montserrat placeholder:text-dark-grey transitioning focus:border-primary" placeholder="Escribe aquí...">
+                    <input type="text" class="w-full bg-white py-3 px-4 rounded-lg border border-primary outline-none font-montserrat placeholder:text-dark-grey transitioning focus:border-secondary" placeholder="Escribe aquí...">
                 </div>
             </div>
 

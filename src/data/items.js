@@ -3,9 +3,8 @@ const siteName = 'Nazareth'
 
 const contactInfo = {
     address: 'Supermanzana 76, 77527 Cancún, Q.R.',
-    phone1: '998 324 6449',
-    phone2: '998 219 9967',
-    whatsapp: '998 155 1736',
+    whatsapp1: '998 155 1736',
+    whatsapp2: '998 219 9967',
     email: 'info@mydomain.com',
 }
 
