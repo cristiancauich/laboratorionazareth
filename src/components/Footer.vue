@@ -31,7 +31,7 @@
 							Análisis clínicos
 						</a>
 
-						<a href="/#promociones" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<a href="/" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 							Promociones
 						</a>
 

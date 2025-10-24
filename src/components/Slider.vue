@@ -17,20 +17,22 @@
     ]);
 </script>
 <template>
-    <swiper
-        :modules="modules"
-        :slides-per-view="1"
-        :space-between="0"
-        navigation
-        :pagination="{ clickable: true }"
-        loop
-        autoplay
-        id="main-slider"
-    >
-        <template v-for="(slide, index) in slides" :key="index">
-            <swiper-slide>
-                <img :src="slide" width="1920" height="1080" class="block w-full h-auto" />
-            </swiper-slide>
-        </template>
-    </swiper>
+    <div id="promociones" ref="promociones">
+        <swiper
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="0"
+            navigation
+            :pagination="{ clickable: true }"
+            loop
+            autoplay
+            id="main-slider"
+        >
+            <template v-for="(slide, index) in slides" :key="index">
+                <swiper-slide>
+                    <img :src="slide" width="1920" height="1080" class="block w-full h-auto" />
+                </swiper-slide>
+            </template>
+        </swiper>
+    </div>
 </template>

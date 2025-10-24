@@ -64,7 +64,7 @@
     ]);
 </script>
 <template>
-    <div class="py-12 md:py-20 xl:py-24 bg-[url(/src/assets/images/bgs/analysis-search.jpg)] bg-cover bg-center">
+    <div id="analisis-clinicos" ref="analisis-clinicos" class="py-12 md:py-20 xl:py-24 bg-[url(/src/assets/images/bgs/analysis-search.jpg)] bg-cover bg-center">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-6 mb-8 md:mb-12 xl:mb-16">
                 <div class="md:col-span-6 xl:col-span-5 xl:col-start-2 flex justify-center md:justify-start">
