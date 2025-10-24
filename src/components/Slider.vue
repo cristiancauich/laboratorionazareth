@@ -10,14 +10,6 @@
 
     const modules = [Navigation, Pagination, Autoplay];
 
-    const onSwiper = (swiper) => {
-        console.log(swiper);
-    };
-
-    const onSlideChange = () => {
-        console.log('slide change');
-    };
-
     const slides = ref([
         'https://via.assets.so/img.jpg?w=1920&h=500&gradient=linear-gradient%28135deg%2C+%230093E9%2C+%2380D0C7%2C+%2323a6d5%2C+%2323d5ab%29&text=lorem+ipsum&f=png',
         'https://via.assets.so/img.jpg?w=1920&h=500&gradientFrom=f093fb&gradientTo=f5576c&gradientAngle=135&text=lorem+ipsum&f=png',
@@ -29,8 +21,6 @@
         :modules="modules"
         :slides-per-view="1"
         :space-between="0"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
         navigation
         :pagination="{ clickable: true }"
         loop

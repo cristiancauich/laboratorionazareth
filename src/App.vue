@@ -13,6 +13,7 @@ import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
 import Slider from "./components/Slider.vue";
 import AnalysisSearch from "./components/AnalysisSearch.vue";
+import Packs from "./components/Packs.vue";
 </script>
 
 <template>
@@ -20,6 +21,7 @@ import AnalysisSearch from "./components/AnalysisSearch.vue";
 
   <Slider />
   <AnalysisSearch />
-  
+  <Packs />
+
   <Footer />
 </template>
