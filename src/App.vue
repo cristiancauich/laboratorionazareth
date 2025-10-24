@@ -14,6 +14,7 @@ import Footer from "./components/Footer.vue";
 import Slider from "./components/Slider.vue";
 import AnalysisSearch from "./components/AnalysisSearch.vue";
 import Packs from "./components/Packs.vue";
+import Banner from "./components/Banner.vue";
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import Packs from "./components/Packs.vue";
   <Slider />
   <AnalysisSearch />
   <Packs />
+  <Banner />
 
   <Footer />
 </template>
