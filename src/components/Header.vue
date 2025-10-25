@@ -81,7 +81,7 @@
     ref="header" 
     class="sticky top-0 left-0 w-full z-50 bg-white overflow-hidden transitioning 
       after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-[20%] xl:after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning
-      before:content-[''] before:absolute before:left-[20%] xl:before:left-1/4 before:z-10 before:border-[24px] before:border-transparent before:border-l-white before:border-b-white" 
+      before:hidden before:md:block before:content-[''] before:absolute before:left-[20%] xl:before:left-1/4 before:z-10 before:border-[24px] before:border-transparent before:border-l-white before:border-b-white" 
     :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'"
   >
     <div class="container mx-auto px-4 flex flex-row items-center gap-6 py-3 md:pt-0 transitioning" :class="isSticky ? 'md:pb-4' : 'md:pb-6 md:items-end'">
