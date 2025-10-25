@@ -16,5 +16,4 @@
 	<Banner />
 	<Contact />
 	<Slogan />
-	<router-view />
 </template>

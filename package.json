@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.1.15",
     "esbuild": "^0.25.11",
     "parallax-js": "^3.1.0",
+    "sweetalert2": "^11.26.3",
     "swiper": "^12.0.3",
     "vue": "^3.3.4",
     "vue-router": "^4.6.3"

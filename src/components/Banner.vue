@@ -14,9 +14,12 @@
                     Accede a tus resultados desde cualquier lugar y en cualquier momento. Nuestro sistema en línea te permite visualizar y descargar tus análisis de forma rápida y confidencial.
                 </p>
 
-                <a href="#" class="inline-block py-2 md:py-3 px-6 md:px-8 bg-tertiary rounded-full font-semibold text-secondary transitioning hover:bg-primary hover:text-white hover:shadow-md">
+                <RouterLink 
+                    to="/consulta-resultados" 
+                    class="inline-block py-2 md:py-3 px-6 md:px-8 bg-tertiary rounded-full font-semibold text-secondary transitioning hover:bg-primary hover:text-white hover:shadow-md"
+                >
                     Ver mis resultados
-                </a>
+                </RouterLink>
             </div>
         </div>
     </div>
