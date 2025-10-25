@@ -1,5 +1,8 @@
 <script setup>
-  import { ref, onMounted, onUnmounted } from 'vue'
+  import { ref, onMounted, onUnmounted, watch } from 'vue'
+  import { useRouter, useRoute } from 'vue-router'
+  import { useScrollSpy } from '../composables/useScrollSpy'
+
   import { contactInfo, siteName, socials } from "../data/items"
   import facebookIcon from "../components/icons/facebook.vue"
   import instagramIcon from "../components/icons/instagram.vue"
@@ -8,30 +11,79 @@
   import menuIcon from "../components/icons/menu.vue"
   import closeIcon from "../components/icons/close.vue"
   import Menu from "../components/Menu.vue"
+
   const logo = "/src/assets/images/logo.png"
 
   const isOpen = ref(false)
   const isSticky = ref(false)
+  const header = ref(null)
+  let headerHeight = 80
 
   const toggleSidebar = () => (isOpen.value = !isOpen.value)
   const closeSidebar = () => (isOpen.value = false)
-  const header = ref(null);
 
   const handleScroll = () => {
-    isSticky.value = window.scrollY < header.value.clientHeight ? false : true;
+    isSticky.value = window.scrollY >= headerHeight
+    if (header.value) {
+      headerHeight = header.value.clientHeight
+    }
   }
 
+  const router = useRouter()
+  const route = useRoute()
+
+  const handleMenuClick = (event, href) => {
+    event.preventDefault()
+    closeSidebar()
+
+    if (route.name === 'home') {
+      scrollToSection(href)
+    } else {
+      router.push('/').then(() => {
+        setTimeout(() => scrollToSection(href), 300)
+      })
+    }
+  }
+
+  const scrollToSection = (href) => {
+    const sectionId = href.startsWith('#') ? href : new URL(href).hash
+    const section = document.querySelector(sectionId)
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - headerHeight + 16,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  // --- ScrollSpy usando el composable
+  const { activeId } = useScrollSpy({
+    selector: '.section',
+    rootMargin: `-${headerHeight}px 0px -40% 0px`,
+    threshold: 0.5
+  })
+
   onMounted(() => {
-    window.addEventListener("scroll", handleScroll)
+    if (header.value) {
+      headerHeight = header.value.clientHeight
+    }
+
+    window.addEventListener('scroll', handleScroll)
   })
 
   onUnmounted(() => {
-    window.removeEventListener("scroll", handleScroll)
+    window.removeEventListener('scroll', handleScroll)
   })
 </script>
 
 <template>
-  <header ref="header" class="sticky top-0 left-0 w-full z-50 bg-white overflow-hidden transitioning after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning" :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'">
+  <header 
+    ref="header" 
+    class="sticky top-0 left-0 w-full z-50 bg-white overflow-hidden transitioning 
+      after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-[20%] xl:after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning
+      before:content-[''] before:absolute before:left-[20%] xl:before:left-1/4 before:z-10 before:border-[24px] before:border-transparent before:border-l-white before:border-b-white" 
+    :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'"
+  >
     <div class="container mx-auto px-4 flex flex-row items-center gap-6 py-3 md:pt-0 transitioning" :class="isSticky ? 'md:pb-4' : 'md:pb-6 md:items-end'">
       <a href="/">
         <img :src="logo" :alt="siteName" width="162" height="144" class="w-auto transitioning" :class="isSticky ? 'h-12 md:h-16 lg:h-20 xl:h-20 2xl:h-24 md:mt-4' : 'h-16 md:h-20 lg:h-28 xl:h-32 2xl:h-36'">
@@ -69,7 +121,7 @@
 
         <div class="flex flex-row items-center justify-end transitioning" :class="isSticky ? 'md:mt-4' : 'lg:mt-8'">
           <ul class="menu hidden xl:flex flex-row items-center gap-x-10 2xl:gap-x-12">
-            <Menu />
+            <Menu :activeId="activeId" @menuClick="handleMenuClick" />
           </ul>
 
           <div class="flex items-center xl:hidden">
@@ -109,7 +161,7 @@
         x-cloak
         v-if="isOpen"
       >
-          <Menu />
+          <Menu :activeId="activeId" @menuClick="handleMenuClick" />
       </ul>
     </transition>
   </header>

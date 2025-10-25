@@ -150,7 +150,7 @@
     ]);
 </script>
 <template>
-    <div id="paquetes" ref="paquetes" class="py-12 md:py-20 xl:py-24 bg-white">
+    <div id="paquetes" ref="paquetes" class="section py-12 md:py-20 xl:py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="w-full md:w-10/12 xl:w-7/12 mx-auto mb-8 md:mb-12 xl:mb-16">
                 <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6">

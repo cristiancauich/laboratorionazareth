@@ -64,7 +64,7 @@
     ]);
 </script>
 <template>
-    <div id="analisis-clinicos" ref="analisis-clinicos" class="py-12 md:py-20 xl:py-24 bg-[url(/src/assets/images/bgs/analysis-search.jpg)] bg-cover bg-center">
+    <div id="analisis-clinicos" ref="analisis-clinicos" class="section py-12 md:py-20 xl:py-24 bg-[url(/src/assets/images/bgs/analysis-search.jpg)] bg-cover bg-center">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-6 mb-8 md:mb-12 xl:mb-16">
                 <div class="md:col-span-6 xl:col-span-5 xl:col-start-2 flex justify-center md:justify-start">
@@ -76,7 +76,7 @@
 
                 <div class="md:col-span-5 xl:col-span-4 md:col-start-8 xl:col-start-9">
                     <label for="search_analysis" class="inline-block font-montserrat font-medium mb-1">Buscar análisis</label>
-                    <input type="text" class="w-full bg-white py-3 px-4 rounded-lg border border-primary outline-none font-montserrat placeholder:text-dark-grey transitioning focus:border-secondary" placeholder="Escribe aquí...">
+                    <input type="text" id="search_analysis" name="search_analysis" class="w-full bg-white py-3 px-4 rounded-lg border border-primary outline-none font-montserrat placeholder:text-dark-grey transitioning focus:border-secondary" placeholder="Escribe aquí...">
                 </div>
             </div>
 

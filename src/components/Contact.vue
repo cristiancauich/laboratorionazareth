@@ -33,7 +33,7 @@
 </script>
 
 <template>
-    <div id="contacto" ref="contacto" class="py-12 md:py-20 xl:py-24 bg-white bg-cover md:bg-contain lg:bg-cover md:bg-center" :style="{ backgroundImage: `url(${bgImage})` }">
+    <div id="contacto" ref="contacto" class="section py-12 md:py-20 xl:py-24 bg-white bg-cover md:bg-contain lg:bg-cover md:bg-center" :style="{ backgroundImage: `url(${bgImage})` }">
         <div class="container mx-auto px-4">
             <div class="w-full md:w-10/12 xl:w-7/12 mx-auto mb-6 md:mb-8 xl:mb-10">
                 <h4 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6">
