@@ -94,13 +94,13 @@
           <div class="flex items-center gap-3">
             <whatsappIcon class="size-5 text-tertiary" />
 
-            <a :href="`https://wa.me/${contactInfo.whatsapp1}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
+            <a :href="`https://wa.me/${contactInfo.whatsapp1.replace(/\s/g, '')}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
               {{ contactInfo.whatsapp1 }}
             </a>
 
             <span class="text-white">/</span>
 
-            <a :href="`https://wa.me/${contactInfo.whatsapp2}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
+            <a :href="`https://wa.me/${contactInfo.whatsapp2.replace(/\s/g, '')}`" target="_blank" class="group font-montserrat text-white font-medium transitioning hover:text-secondary">
               {{ contactInfo.whatsapp2 }}
             </a>
           </div>

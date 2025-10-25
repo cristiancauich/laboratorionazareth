@@ -64,7 +64,7 @@
                         <div class="flex justify-center lg:justify-start gap-3">
 							<whatsappIcon class="size-5 text-primary flex-none" />
 
-							<a :href="`https://wa.me/${contactInfo.whatsapp1}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							<a :href="`https://wa.me/${contactInfo.whatsapp1.replace(/\s/g, '')}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 								{{ contactInfo.whatsapp1 }}
 							</a>
 						</div>
@@ -72,7 +72,7 @@
                         <div class="flex justify-center lg:justify-start gap-3">
 							<whatsappIcon class="size-5 text-primary flex-none" />
 
-							<a :href="`https://wa.me/${contactInfo.whatsapp2}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							<a :href="`https://wa.me/${contactInfo.whatsapp2.replace(/\s/g, '')}`" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 								{{ contactInfo.whatsapp2 }}
 							</a>
 						</div>
