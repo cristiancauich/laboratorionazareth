@@ -68,13 +68,13 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-6 mb-8 md:mb-12 xl:mb-16">
                 <div class="md:col-span-6 xl:col-span-5 xl:col-start-2 flex justify-center md:justify-start">
-                    <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary">
+                    <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary" data-aos="fade-up" data-aos-delay="0">
                         Busca aquí tus
                         <span class="block text-transparent bg-gradient-to-r from-secondary to-primary bg-clip-text ml-12 xl:ml-28">Análisis Clíncos</span>
                     </h1>
                 </div>
 
-                <div class="md:col-span-5 xl:col-span-4 md:col-start-8 xl:col-start-9">
+                <div class="md:col-span-5 xl:col-span-4 md:col-start-8 xl:col-start-9" data-aos="fade-up" data-aos-delay="150">
                     <label for="search_analysis" class="inline-block font-montserrat font-medium mb-1">Buscar análisis</label>
                     <input type="text" id="search_analysis" name="search_analysis" class="w-full bg-white py-3 px-4 rounded-lg border border-primary outline-none font-montserrat placeholder:text-dark-grey transitioning focus:border-secondary" placeholder="Escribe aquí...">
                 </div>
@@ -111,7 +111,10 @@
             >
                 <template v-for="(item, index) in items" :key="index">
                     <swiper-slide>
-                        <div class="flex flex-col items-center justify-center gap-4 md:gap-8 px-4 md:px-6 py-8 md:py-10 bg-white rounded-2xl shadow-lg mb-4">
+                        <div
+                            class="flex flex-col items-center justify-center gap-4 md:gap-8 px-4 md:px-6 py-8 md:py-10 bg-white rounded-2xl shadow-lg mb-4"
+                            data-aos="fade-up" :data-aos-delay="300 * index"
+                        >
                             <div class="font-semibold text-base md:text-xl text-primary text-center min-h-[72px] md:min-h-[84px]">
                                 {{ item.title }}
                             </div>

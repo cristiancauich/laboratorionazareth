@@ -153,11 +153,11 @@
     <div id="paquetes" ref="paquetes" class="section py-12 md:py-20 xl:py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="w-full md:w-10/12 xl:w-7/12 mx-auto mb-8 md:mb-12 xl:mb-16">
-                <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6">
+                <h2 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6" data-aos="fade-up" data-aos-delay="0">
                     <span class="block text-transparent bg-gradient-to-r from-secondary to-primary bg-clip-text">Paquetes de análisis</span>
                 </h2>
 
-                <p class="font-montserrat text-sm lg:text-base text-center">
+                <p class="font-montserrat text-sm lg:text-base text-center" data-aos="fade-up" data-aos-delay="200">
                     Explora nuestras opciones de estudios diseñadas para cada necesidad. Desde checkups básicos hasta análisis especializados, encuentra el paquete ideal para cuidar tu salud con precisión y confianza.
                 </p>
             </div>
@@ -189,7 +189,12 @@
             >
                 <template v-for="(item, index) in items" :key="index">
                     <swiper-slide class="!h-auto mb-4">
-                        <div class="relative h-full bg-white rounded-2xl shadow-lg bg-cover bg-left overflow-hidden" :style="{ backgroundImage: `url(${item.image})` }">
+                        <div 
+                            class="relative h-full bg-white rounded-2xl shadow-lg bg-cover bg-left overflow-hidden"
+                            :style="{ backgroundImage: `url(${item.image})` }"
+                            data-aos="fade-up"
+                            :data-aos-delay="300 * index"
+                        >
                             <div v-if="item.color" class="absolute w-full h-full top-0 left-0 opacity-50" :style="{ backgroundColor: item.color }"></div>
 
                             <div class="relative h-full z-10 flex flex-col items-start gap-6 md:gap-6 px-4 md:px-8 xl:px-10 py-10 md:py-12 xl:py-14">

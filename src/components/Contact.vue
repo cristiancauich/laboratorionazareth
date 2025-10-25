@@ -36,17 +36,17 @@
     <div id="contacto" ref="contacto" class="section py-12 md:py-20 xl:py-24 bg-white bg-cover md:bg-contain lg:bg-cover md:bg-center" :style="{ backgroundImage: `url(${bgImage})` }">
         <div class="container mx-auto px-4">
             <div class="w-full md:w-10/12 xl:w-7/12 mx-auto mb-6 md:mb-8 xl:mb-10">
-                <h4 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6">
+                <h4 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6" data-aos="fade-up" data-aos-delay="0">
                     <span class="block text-transparent bg-gradient-to-r from-secondary to-primary bg-clip-text">Estamos aquí para atenderte</span>
                 </h4>
 
-                <p class="font-montserrat text-sm lg:text-base text-center">
+                <p class="font-montserrat text-sm lg:text-base text-center" data-aos="fade-up" data-aos-delay="100">
                     ¿Tienes alguna duda o necesitas agendar un estudio?  Completa el siguiente formulario y nuestro equipo se pondrá en contacto contigo a la brevedad.  También puedes escribirnos directamente por llamada, WhatsApp o visitarnos en nuestras instalaciones.
                 </p>
             </div>
 
             <div class="w-full xl:w-10/12 xl:mx-auto grid grid-cols-1 md:grid-cols-10">
-                <div class="md:col-span-6 md:col-start-5">
+                <div class="md:col-span-6 md:col-start-5" data-aos="fade-up" data-aos-delay="200">
                     <ContactForm />
                 </div>
 
@@ -54,7 +54,7 @@
                     <div class="h-px w-full my-6 md:h-full md:w-px md:my-0 md:mx-auto lg:mx-0 bg-gray"></div>
                 </div>
 
-                <div class="md:col-span-3 md:col-start-1 md:row-start-1">
+                <div class="md:col-span-3 md:col-start-1 md:row-start-1" data-aos="fade-up" data-aos-delay="300">
                     <div class="font-bold text-xl md:text-2xl xl:text-3xl text-secondary mb-6">Contacto directo</div>
 
                     <div class="font-medium text-base md:text-xl xl:text-2xl text-secondary mb-4">WhatsApp</div>
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="relative w-full xl:w-10/12 xl:mx-auto grid grid-cols-1 md:grid-cols-10 gap-6 mt-12 md:mt-20 xl:mt-24">
+            <div class="relative w-full xl:w-10/12 xl:mx-auto grid grid-cols-1 md:grid-cols-10 gap-6 mt-12 md:mt-20 xl:mt-24" data-aos="fade-up" data-aos-delay="300">
                 <div ref="scene" class="absolute inset-0 pointer-events-none">
                     <div data-depth="0.6"  data-invert-x="false" data-invert-y="false" class="w-full h-full">
                         <div class="absolute top-0 left-0 -translate-y-2/3 -translate-x-1/3 hidden md:block w-36 2xl:w-48">

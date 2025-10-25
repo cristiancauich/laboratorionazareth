@@ -72,8 +72,6 @@
     <div
         ref="container"
         class="marquee overflow-hidden w-full bg-tertiary py-3 lg:py-4 xl:py-6"
-        @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
     >
         <div ref="track" class="marquee-track will-change-transform" :style="trackStyle">
             <div ref="slotContent" class="marquee-items inline-flex font-bold text-base md:text-lg xl:text-xl 2xl:text-2xl text-secondary whitespace-nowrap uppercase mr-2">

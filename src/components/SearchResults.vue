@@ -59,11 +59,11 @@
     <div class="py-12 md:py-20 xl:py-24 bg-[url(/src/assets/images/bgs/26763.jpg)] bg-cover bg-center">
         <div class="container mx-auto px-4">
             <div class="w-full md:w-8/12 xl:w-6/12 mx-auto mb-6 md:mb-8 xl:mb-10">
-                <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6">
+                <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-secondary text-center mb-6" data-aos="fade-up" data-aos-delay="100">
                     Consulta tus resultados
                 </h1>
 
-                <p class="font-montserrat text-sm lg:text-base text-center">
+                <p class="font-montserrat text-sm lg:text-base text-center" data-aos="fade-up" data-aos-delay="300">
                     Ingresa tu número de referencia o ID de paciente para acceder de forma segura a tus resultados de análisis clínicos.
                 </p>
             </div>
@@ -71,6 +71,7 @@
             <form
                 @submit.prevent="handleSubmit"
                 class="w-full max-w-md bg-primary shadow-lg rounded-2xl p-6 xl:p-8 flex flex-col gap-4 mx-auto"
+                data-aos="fade-up" data-aos-delay="600"
             >
                 <div class="flex flex-col gap-1">
                     <label for="referenceNumber" class="inline-block font-montserrat font-medium text-white">
@@ -96,7 +97,7 @@
                 </button>
             </form>
 
-            <div class="mt-12 max-w-2xl mx-auto text-center text-dark-gray text-sm">
+            <div class="mt-12 max-w-2xl mx-auto text-center text-dark-gray text-sm" data-aos="fade-up" data-aos-delay="900">
                 <p>🔒 La información ingresada es confidencial y se utiliza únicamente para mostrar tus resultados. Si tienes dudas sobre tu análisis, comunícate directamente con el laboratorio.</p>
             </div>
         </div>
