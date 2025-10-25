@@ -1,4 +1,8 @@
 <script setup>
+	import { ref, onMounted, onUnmounted } from 'vue'
+	import { useRouter, useRoute } from 'vue-router'
+	import { useScrollSpy } from '../composables/useScrollSpy'
+
 	import { contactInfo, socials, siteName } from "../data/items"
 	import facebookIcon from "./icons/facebook.vue"
 	import instagramIcon from "./icons/instagram.vue"
@@ -7,6 +11,59 @@
 	import locationIcon from "./icons/location.vue"
 
 	const logo = "/src/assets/images/logo.png"
+	const header = ref(null)
+  	let headerHeight = 80
+
+	const handleScroll = () => {
+		if (header.value) {
+			headerHeight = header.value.clientHeight
+		}
+	}
+
+	const router = useRouter()
+	const route = useRoute()
+
+	const handleMenuClick = (event, href) => {
+		event.preventDefault()
+
+		if (route.name === 'home') {
+			scrollToSection(href)
+		} else {
+			router.push('/').then(() => {
+				setTimeout(() => scrollToSection(href), 300)
+			})
+		}
+	}
+
+	const scrollToSection = (href) => {
+		const sectionId = href.startsWith('#') ? href : new URL(href).hash
+		const section = document.querySelector(sectionId)
+		if (section) {
+			window.scrollTo({
+				top: section.offsetTop - headerHeight + 16,
+				behavior: 'smooth'
+			})
+		}
+	}
+
+	// --- ScrollSpy usando el composable
+	const { activeId } = useScrollSpy({
+		selector: '.section',
+		rootMargin: `-${headerHeight}px 0px -40% 0px`,
+		threshold: 0.5
+	})
+
+	onMounted(() => {
+		if (header.value) {
+			headerHeight = header.value.clientHeight
+		}
+
+		window.addEventListener('scroll', handleScroll)
+	})
+
+	onUnmounted(() => {
+		window.removeEventListener('scroll', handleScroll)
+	})
 </script>
 
 <template>
@@ -27,23 +84,26 @@
 					<div class="font-medium text-lg md:text-xl xl:text-2xl text-primary">Enlaces directos</div>
 
 					<div class="flex flex-col items-center lg:items-start gap-3 xl:gap-4">
-						<a href="/#analisis-clinicos" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<a href="#analisis-clinicos" @click="(e) => handleMenuClick(e, '#analisis-clinicos')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 							Análisis clínicos
 						</a>
 
-						<a href="/" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<a href="#promociones" @click="(e) => handleMenuClick(e, '#promociones')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 							Promociones
 						</a>
 
-						<a href="/#paquetes" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<a href="#paquetes" @click="(e) => handleMenuClick(e, '#paquetes')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 							Paquetes
 						</a>
 
-						<a href="/consulta-resultados" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<RouterLink 
+							to="/consulta-resultados" 
+							class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary"
+						>
 							Consulta resultados
-						</a>
+						</RouterLink>
 
-						<a href="/#contacto" target="_blank" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+						<a href="#contacto" @click="(e) => handleMenuClick(e, '#contacto')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
 							Contacto
 						</a>
                     </div>
