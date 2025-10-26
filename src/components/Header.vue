@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, onMounted, onUnmounted, watch } from 'vue'
+  import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
   import { useRouter, useRoute } from 'vue-router'
   import { useScrollSpy } from '../composables/useScrollSpy'
 
@@ -21,6 +21,15 @@
 
   const toggleSidebar = () => (isOpen.value = !isOpen.value)
   const closeSidebar = () => (isOpen.value = false)
+
+  // --- ScrollSpy usando el composable
+  const { activeId, refresh } = useScrollSpy({
+    selector: '.section',
+    rootMargin: `-${headerHeight}px 0px -40% 0px`,
+    threshold: 0.4,
+    observeMutations: true
+  })
+  
 
   const handleScroll = () => {
     isSticky.value = window.scrollY >= headerHeight
@@ -56,12 +65,15 @@
     }
   }
 
-  // --- ScrollSpy usando el composable
-  const { activeId } = useScrollSpy({
-    selector: '.section',
-    rootMargin: `-${headerHeight}px 0px -40% 0px`,
-    threshold: 0.5
-  })
+  watch(
+    () => route.name,
+    async (newName) => {
+      if (newName === 'home') {
+        await nextTick()
+        setTimeout(() => refresh(), 80)
+      }
+    },
+  )
 
   onMounted(() => {
     if (header.value) {
@@ -69,6 +81,12 @@
     }
 
     window.addEventListener('scroll', handleScroll)
+
+    // refresca nuevamente al load de recursos pesados (opcional pero MUY efectivo)
+    window.addEventListener('load', () => {
+      // un pequeño delay para seguridad
+      setTimeout(() => refresh(), 50)
+    })
   })
 
   onUnmounted(() => {
@@ -85,12 +103,12 @@
     :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'"
   >
     <div class="container mx-auto px-4 flex flex-row items-center gap-6 py-3 md:pt-0 transitioning" :class="isSticky ? 'md:pb-4' : 'md:pb-6 md:items-end'">
-      <a href="/">
+      <RouterLink to="/">
         <img :src="logo" :alt="siteName" width="162" height="144" class="w-auto transitioning" :class="isSticky ? 'h-12 md:h-16 lg:h-20 xl:h-20 2xl:h-24 md:mt-4' : 'h-16 md:h-20 lg:h-28 xl:h-32 2xl:h-36'">
-      </a>
+      </RouterLink>
 
       <div class="relative z-10 flex flex-col md:w-3/4 ml-auto transitioning">
-        <div class="hidden md:flex items-center justify-between gap-4 transitioning" :class="isSticky ? 'py-0 h-0 overflow-hidden' : 'py-3 h-auto'">
+        <div class="hidden md:flex items-center justify-between gap-4" :class="isSticky ? 'py-0 h-0 overflow-hidden' : 'py-3 h-auto'">
           <div class="flex items-center gap-3">
             <whatsappIcon class="size-5 text-tertiary" />
 
@@ -121,7 +139,7 @@
 
         <div class="flex flex-row items-center justify-end transitioning" :class="isSticky ? 'md:mt-4' : 'lg:mt-8'">
           <ul class="menu hidden xl:flex flex-row items-center gap-x-10 2xl:gap-x-12">
-            <Menu :activeId="activeId" @menuClick="handleMenuClick" />
+            <Menu :activeId="activeId" @menuClick="handleMenuClick" @routeClick="closeSidebar" />
           </ul>
 
           <div class="flex items-center xl:hidden">
@@ -161,7 +179,7 @@
         x-cloak
         v-if="isOpen"
       >
-          <Menu :activeId="activeId" @menuClick="handleMenuClick" />
+          <Menu :activeId="activeId" @menuClick="handleMenuClick"  @routeClick="closeSidebar" />
       </ul>
     </transition>
   </header>

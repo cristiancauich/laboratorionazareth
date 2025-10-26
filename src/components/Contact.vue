@@ -88,53 +88,55 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="relative w-full xl:w-10/12 xl:mx-auto grid grid-cols-1 md:grid-cols-10 gap-6 mt-12 md:mt-20 xl:mt-24" data-aos="fade-up" data-aos-delay="300">
-                <div ref="scene" class="absolute inset-0 pointer-events-none">
-                    <div data-depth="0.6"  data-invert-x="false" data-invert-y="false" class="w-full h-full">
-                        <div class="absolute top-0 left-0 -translate-y-2/3 -translate-x-1/3 hidden md:block w-36 2xl:w-48">
-                            <img :src="cellImage" alt="Célula laboratorio" width="190" height="181" class="w-36 2xl:w-48 h-auto" />
-                        </div>
-                    </div>
-                    
-                    <div data-depth="0.1"  data-invert-x="false" data-invert-y="true" class="w-full h-full">
-                        <div class="absolute bottom-0 left-[80%] -translate-y-1/3 xl:-translate-y-1/4 2xl:-translate-y-1/3 -translate-x-2/3 hidden lg:block w-32 2xl:w-36">
-                            <img :src="cellImage" alt="Célula laboratorio" width="144" height="140" class="w-32 2xl:w-36 h-auto" />
-                        </div>
-                    </div>
-                    
-                    <div data-depth="0.3"  data-invert-x="true" data-invert-y="true" class="w-full h-full">
-                        <div class="absolute -top-1/4 md:top-20 2xl:top-24 left-3/4 md:left-auto md:right-0 md:-translate-y-2/3 xl:-translate-y-1/3 md:translate-x-1/3 2xl:translate-x-1/2 2xl:-translate-y-1/2 w-20">
-                            <img :src="cellImage" alt="Célula laboratorio" width="88" height="85" class="w-20 h-auto" />
-                        </div>
+    <div class="container mx-auto px-4 pb-12 md:pb-20 xl:pb-24">
+        <div class="relative w-full xl:w-10/12 xl:mx-auto grid grid-cols-1 md:grid-cols-10 gap-6" data-aos="fade-up" data-aos-delay="300">
+            <div ref="scene" class="absolute inset-0 pointer-events-none">
+                <div data-depth="0.6"  data-invert-x="false" data-invert-y="false" class="w-full h-full">
+                    <div class="absolute top-0 left-0 -translate-y-2/3 -translate-x-1/3 hidden md:block w-36 2xl:w-48">
+                        <img :src="cellImage" alt="Célula laboratorio" width="190" height="181" class="w-36 2xl:w-48 h-auto" />
                     </div>
                 </div>
-
-                <div class="md:col-span-5 lg:w-64 xl:w-72 2xl:w-80 lg:aspect-square flex flex-col gap-6 px-6 py-8 md:p-6 xl:p-8 rounded-2xl bg-primary shadow-lg relative z-10 lg:absolute lg:right-0 lg:top-0 lg:translate-y-1/4">
-                    <locationIcon class="size-10 md:size-12 xl:size-14 text-tertiary" />
-
-                    <div class="font-bold text-xl md:text-2xl xl:text-3xl text-white">Ubicación</div>
-                    
-                    <p class="font-montserrat text-base xl:text-lg text-white">
-                        Segundo piso, interior de la Clínica Nazareth, Avenida Revolución, Supermanzana 76, CP 77527, Cancún, Q.R.
-                    </p>
+                
+                <div data-depth="0.1"  data-invert-x="false" data-invert-y="true" class="w-full h-full">
+                    <div class="absolute bottom-0 left-[80%] -translate-y-1/3 xl:-translate-y-1/4 2xl:-translate-y-1/3 -translate-x-2/3 hidden lg:block w-32 2xl:w-36">
+                        <img :src="cellImage" alt="Célula laboratorio" width="144" height="140" class="w-32 2xl:w-36 h-auto" />
+                    </div>
                 </div>
-
-                <div class="md:col-span-10 lg:col-span-6 lg:col-start-3 aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7440.219818720474!2d-86.8285854576496!3d21.187792372006392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2d6b3013c471%3A0x798def209a32baba!2sLaboratorio%20de%20An%C3%A1lisis%20Cl%C3%ADnicos%20Nazareth!5e0!3m2!1ses-419!2smx!4v1761335055912!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+                
+                <div data-depth="0.3"  data-invert-x="true" data-invert-y="true" class="w-full h-full">
+                    <div class="absolute -top-1/4 md:top-20 2xl:top-24 left-3/4 md:left-auto md:right-0 md:-translate-y-2/3 xl:-translate-y-1/3 md:translate-x-1/3 2xl:translate-x-1/2 2xl:-translate-y-1/2 w-20">
+                        <img :src="cellImage" alt="Célula laboratorio" width="88" height="85" class="w-20 h-auto" />
+                    </div>
                 </div>
+            </div>
 
-                <div class="md:col-span-5 md:col-start-6 md:row-start-1 lg:col-start-auto lg:row-start-auto lg:w-64 xl:w-72 2xl:w-80 lg:aspect-square flex flex-col gap-6 px-6 py-8 md:p-6 xl:p-8 rounded-2xl bg-secondary shadow-lg lg:absolute lg:left-0 lg:bottom-0 lg:-translate-y-1/4">
-                    <clockIcon class="size-10 md:size-12 xl:size-14 text-tertiary" />
+            <div class="md:col-span-5 lg:w-64 xl:w-72 2xl:w-80 lg:aspect-square flex flex-col gap-6 px-6 py-8 md:p-6 xl:p-8 rounded-2xl bg-primary shadow-lg relative z-10 lg:absolute lg:right-0 lg:top-0 lg:translate-y-1/4">
+                <locationIcon class="size-10 md:size-12 xl:size-14 text-tertiary" />
 
-                    <div class="font-bold text-xl md:text-2xl xl:text-3xl text-white">Horarios</div>
-                    
-                    <ul class="list-disc pl-4 font-montserrat text-base xl:text-lg text-white">
-                        <li>Lunes a Viernes de 7 am a 9 pm</li>
-                        <li>Sábados de 7 am a 4 pm</li>
-                        <li>Domingos abierto las 24 horas</li>
-                    </ul>
-                </div>
+                <div class="font-bold text-xl md:text-2xl xl:text-3xl text-white">Ubicación</div>
+                
+                <p class="font-montserrat text-base xl:text-lg text-white">
+                    Segundo piso, interior de la Clínica Nazareth, Avenida Revolución, Supermanzana 76, CP 77527, Cancún, Q.R.
+                </p>
+            </div>
+
+            <div class="md:col-span-10 lg:col-span-6 lg:col-start-3 aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7440.219818720474!2d-86.8285854576496!3d21.187792372006392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2d6b3013c471%3A0x798def209a32baba!2sLaboratorio%20de%20An%C3%A1lisis%20Cl%C3%ADnicos%20Nazareth!5e0!3m2!1ses-419!2smx!4v1761335055912!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+            </div>
+
+            <div class="md:col-span-5 md:col-start-6 md:row-start-1 lg:col-start-auto lg:row-start-auto lg:w-64 xl:w-72 2xl:w-80 lg:aspect-square flex flex-col gap-6 px-6 py-8 md:p-6 xl:p-8 rounded-2xl bg-secondary shadow-lg lg:absolute lg:left-0 lg:bottom-0 lg:-translate-y-1/4">
+                <clockIcon class="size-10 md:size-12 xl:size-14 text-tertiary" />
+
+                <div class="font-bold text-xl md:text-2xl xl:text-3xl text-white">Horarios</div>
+                
+                <ul class="list-disc pl-4 font-montserrat text-base xl:text-lg text-white">
+                    <li>Lunes a Viernes de 7 am a 9 pm</li>
+                    <li>Sábados de 7 am a 4 pm</li>
+                    <li>Domingos abierto las 24 horas</li>
+                </ul>
             </div>
         </div>
     </div>

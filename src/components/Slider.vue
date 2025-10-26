@@ -17,7 +17,7 @@
     ]);
 </script>
 <template>
-    <div id="promociones" ref="promociones" class="section">
+    <div id="inicio" ref="inicio" class="section">
         <swiper
             :modules="modules"
             :slides-per-view="1"

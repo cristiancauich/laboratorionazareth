@@ -1,54 +1,112 @@
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 
 /**
  * useScrollSpy(options)
- * options:
- *  - selector: CSS selector para las secciones (default: '.section')
- *  - rootMargin: para ajustar el umbral (ej. `-80px 0px 0px 0px`)
- *  - threshold: valor o array (default: 0.5)
+ * - selector: selector de secciones ('.section')
+ * - rootMargin: ajuste para compensar header
+ * - threshold: IntersectionObserver threshold
+ * - observeMutations: si true, usa MutationObserver para detectar cuando aparecen secciones (default true)
  */
-export function useScrollSpy({ selector = '.section', rootMargin = '-80px 0px -40% 0px', threshold = 0.5 } = {}) {
+export function useScrollSpy({
+	selector = '.section',
+	rootMargin = '-80px 0px -40% 0px',
+	threshold = 0.5,
+	observeMutations = true
+} = {}) {
 	const activeId = ref(null)
-	let observer = null
+	let io = null
+	let mo = null
+	let observedIds = []
+
+	const createObserver = (sections) => {
+		destroyObserver()
+
+		io = new IntersectionObserver((entries) => {
+			// Selecciona la sección más visible
+			const visible = entries
+				.filter(e => e.isIntersecting)
+				.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+			if (visible) {
+				activeId.value = visible.target.id || null
+			} else {
+				activeId.value = null
+			}
+
+			/*console.log('Visible:', entries.map(e => ({
+				id: e.target.id,
+				ratio: e.intersectionRatio,
+				visible: e.isIntersecting
+			})))*/
+		}, { root: null, rootMargin, threshold })
 
 
-	const onIntersect = (entries) => {
-		// Elegimos la entrada más visible (mayor intersectionRatio)
-		let visible = entries
-			.filter(e => e.isIntersecting)
-			.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+		sections.forEach(s => io.observe(s))
+		observedIds = sections.map(s => s.id)
+		//console.log('[scrollspy] observing', observedIds)
+	}
 
-		if (visible) {
-			activeId.value = visible.target.id || null
-		} else {
-			// Si ninguna está intersectando, podríamos mantener el anterior o limpiar
-			activeId.value = null
+	const destroyObserver = () => {
+		if (io) {
+			io.disconnect()
+			io = null
+		}
+	}
+
+	const refresh = async () => {
+		// espera un tick para que el DOM se estabilice
+		await nextTick()
+		const sections = Array.from(document.querySelectorAll(selector)).filter(el => el.id)
+
+		if (!sections.length) {
+			// console.warn('[scrollspy] no sections found yet')
+			destroyObserver()
+			return
 		}
 
-		console.log('Intersecting:', entries.map(e => ({ id: e.target.id, visible: e.isIntersecting })))
+		// si ya estamos observando las mismas ids, no reiniciar
+		const ids = sections.map(s => s.id).join('|')
+		if (observedIds.join('|') === ids && io) {
+			return
+		}
+
+		createObserver(sections)
+	}
+
+	// Observa mutaciones en el body para detectar cuando se agregan secciones dinámicamente
+	const startMutationObserver = () => {
+		if (!observeMutations || typeof MutationObserver === 'undefined') return
+		
+		mo = new MutationObserver((mutations) => {
+			// una heurística simple: cuando se agreguen nodos, intentar refresh()
+			const added = mutations.some(m => m.addedNodes && m.addedNodes.length)
+			
+			if (added) {
+				// debounce simple
+				setTimeout(() => refresh(), 80)
+			}
+		})
+
+		mo.observe(document.body, { childList: true, subtree: true })
+	}
+
+	const stopMutationObserver = () => {
+		if (mo) {
+			mo.disconnect()
+			mo = null
+		}
 	}
 
 	onMounted(() => {
-		const sections = Array.from(document.querySelectorAll(selector))
-			.filter(el => el.id) // solo considerar secciones con id
-		if (!sections.length) return
-
-		observer = new IntersectionObserver(onIntersect, {
-			root: null,
-			rootMargin,
-			threshold
-		})
-
-		sections.forEach(s => observer.observe(s))
-
-		
-
-		console.log('Observed sections:', sections)
+		// inicializa tras nextTick (espera render inicial)
+		refresh()
+		startMutationObserver()
 	})
 
 	onBeforeUnmount(() => {
-		if (observer) observer.disconnect()
+		destroyObserver()
+		stopMutationObserver()
 	})
 
-	return { activeId }
+	return { activeId, refresh, destroy: destroyObserver }
 }

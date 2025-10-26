@@ -88,12 +88,8 @@
 							Análisis clínicos
 						</a>
 
-						<a href="#promociones" @click="(e) => handleMenuClick(e, '#promociones')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
-							Promociones
-						</a>
-
-						<a href="#paquetes" @click="(e) => handleMenuClick(e, '#paquetes')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
-							Paquetes
+						<a href="#paquetes-de-analisis" @click="(e) => handleMenuClick(e, '#paquetes-de-analisis')" class="link-underline font-montserrat text-white font-medium transitioning hover:text-primary">
+							Paquetes de análisis
 						</a>
 
 						<RouterLink 
