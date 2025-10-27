@@ -232,13 +232,13 @@
                                 </div>
 
                                 <div class="flex flex-row items-center gap-4 xl:gap-6 mt-auto">
-                                    <a href="#" class="py-2 md:py-3 px-6 md:px-8 bg-secondary rounded-full font-semibold text-tertiary transitioning hover:bg-tertiary hover:text-secondary hover:shadow-md">
+                                    <RouterLink to="/agendar-estudios" class="py-2 md:py-3 px-6 md:px-8 bg-secondary rounded-full font-semibold text-tertiary transitioning hover:bg-tertiary hover:text-secondary hover:shadow-md">
                                         Agendar
-                                    </a>
+                                    </RouterLink>
 
-                                    <a href="#" class="font-medium text-secondary text-sm md:text-base text-center underline underline-offset-4 transitioning hover:text-tertiary">
+                                    <RouterLink to="/agendar-estudios" class="font-medium text-secondary text-sm md:text-base text-center underline underline-offset-4 transitioning hover:text-tertiary">
                                         Ver detalles
-                                    </a>
+                                    </RouterLink>
                                 </div>
                             </div>
                         </div>

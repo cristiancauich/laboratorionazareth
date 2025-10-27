@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.15",
+    "@vuepic/vue-datepicker": "^11.0.3",
     "aos": "^2.3.4",
     "esbuild": "^0.25.11",
     "parallax-js": "^3.1.0",
     "sweetalert2": "^11.26.3",
     "swiper": "^12.0.3",
     "vue": "^3.3.4",
-    "vue-router": "^4.6.3"
+    "vue-router": "^4.6.3",
+    "vue-select": "^4.0.0-beta.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

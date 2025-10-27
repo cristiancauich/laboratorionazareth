@@ -131,13 +131,13 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-4">
-                                <a href="#" class="font-medium text-primary text-sm md:text-base text-center underline underline-offset-4 transitioning hover:text-secondary">
+                                <RouterLink to="/agendar-estudios" class="font-medium text-primary text-sm md:text-base text-center underline underline-offset-4 transitioning hover:text-secondary">
                                     Ver detalles
-                                </a>
+                                </RouterLink>
 
-                                <a href="#" class="py-2 md:py-3 px-6 md:px-8 bg-secondary rounded-full font-semibold text-tertiary transitioning hover:bg-tertiary hover:text-secondary hover:shadow-md">
+                                <RouterLink to="/agendar-estudios" class="py-2 md:py-3 px-6 md:px-8 bg-secondary rounded-full font-semibold text-tertiary transitioning hover:bg-tertiary hover:text-secondary hover:shadow-md">
                                     Agendar
-                                </a>
+                                </RouterLink>
                             </div>
                         </div>
                     </swiper-slide>
