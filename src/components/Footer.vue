@@ -139,17 +139,17 @@
 					<div class="font-medium text-lg md:text-xl xl:text-2xl text-primary">Redes sociales</div>
 
 					<div class="flex flex-row justify-center lg:justify-start gap-3">
-                        <a :href="socials.facebook" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                        <a :href="socials.facebook" target="_blank" class="group relative size-12 md:size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
                             <facebookIcon class="size-5" />
                             <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">Facebook</span>
                         </a>
 
-                        <a :href="socials.instagram" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                        <a :href="socials.instagram" target="_blank" class="group relative size-12 md:size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
                             <instagramIcon class="size-5" />
                             <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">Instagram</span>
                         </a>
 
-                        <a :href="socials.tiktok" target="_blank" class="group relative size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
+                        <a :href="socials.tiktok" target="_blank" class="group relative size-12 md:size-14 flex items-center justify-center border-2 border-primary rounded-full text-primary transitioning hover:bg-primary hover:text-white">
                             <tiktokIcon class="size-5" />
                             <span class="absolute inline-block -bottom-4 left-1/2 -translate-x-1/2 bg-black/75 py-1 px-2 opacity-0 scale-50 rounded font-medium text-xs text-white transitioning group-hover:opacity-100 group-hover:scale-95 group-hover:-bottom-8 after:content-[''] after:border-4 after:border-transparent after:border-b-black/75 after:absolute after:top-0 after:left-1/2 after:-translate-x-1/2 after:-translate-y-full">TikTok</span>
                         </a>

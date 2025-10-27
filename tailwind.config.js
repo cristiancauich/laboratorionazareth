@@ -13,6 +13,7 @@ export default {
         'gray': "#D9D9D9",
         'dark-gray': "#999999",
         'light-gray': "#F5F5F5",
+        'whatsapp': "#25d366",
       },
       fontFamily: {
         'instrument': ['"Instrument Sans"', 'sans-serif'],
