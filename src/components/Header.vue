@@ -98,16 +98,16 @@
   <header 
     ref="header" 
     class="sticky top-0 left-0 w-full z-50 bg-white overflow-hidden transitioning 
-      after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-[20%] xl:after:translate-x-1/4 after:bg-primary after:top-0 after:transitioning
-      before:hidden before:md:block before:content-[''] before:absolute before:left-[20%] xl:before:left-1/4 before:z-10 before:border-[24px] before:border-transparent before:border-l-white before:border-b-white" 
+      after:hidden after:md:block after:content-[''] after:absolute after:w-full after:left-0 after:translate-x-[20%] md:after:translate-x-[17.5%] 2xl:after:translate-x-[20%] after:bg-primary after:top-0 after:transitioning
+      before:hidden before:md:block before:content-[''] before:absolute before:left-[20%] md:before:left-[17.5%] 2xl:before:left-[20%] before:z-10 before:border-[26px] before:border-transparent before:border-l-white before:border-b-white before:-translate-x-[1px]" 
     :class="isSticky ? 'shadow-lg after:h-0' : 'after:h-12'"
   >
     <div class="container mx-auto px-4 flex flex-row items-center gap-6 py-3 md:pt-0 transitioning" :class="isSticky ? 'md:pb-4' : 'md:pb-6 md:items-end'">
-      <RouterLink to="/">
+      <RouterLink to="/" class="relative z-10">
         <img :src="logo" :alt="siteName" width="162" height="144" class="w-auto transitioning" :class="isSticky ? 'h-12 md:h-16 lg:h-20 xl:h-20 2xl:h-24 md:mt-4' : 'h-16 md:h-20 lg:h-28 xl:h-32 2xl:h-36'">
       </RouterLink>
 
-      <div class="relative z-10 flex flex-col md:w-3/4 ml-auto transitioning">
+      <div class="relative z-10 flex flex-col md:w-[80%] ml-auto transitioning">
         <div class="hidden md:flex items-center justify-between gap-4" :class="isSticky ? 'py-0 h-0 overflow-hidden' : 'py-3 h-auto'">
           <div class="flex items-center gap-3">
             <whatsappIcon class="size-5 text-tertiary" />
@@ -137,8 +137,8 @@
           </div>
         </div>
 
-        <div class="flex flex-row items-center justify-end transitioning" :class="isSticky ? 'md:mt-4' : 'lg:mt-8'">
-          <ul class="menu hidden xl:flex flex-row items-center gap-x-10 2xl:gap-x-12">
+        <div class="flex flex-row items-center justify-end xl:justify-normal transitioning" :class="isSticky ? 'md:mt-4' : 'lg:mt-8'">
+          <ul class="menu hidden xl:flex flex-row items-center gap-x-10 2xl:gap-x-16 xl:w-full">
             <Menu :activeId="activeId" @menuClick="handleMenuClick" @routeClick="closeSidebar" />
           </ul>
 

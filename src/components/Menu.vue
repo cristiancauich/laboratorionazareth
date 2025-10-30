@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <li>
+    <li class="xl:ml-auto">
         <a 
             href="#inicio" 
             @click="(e) => emit('menuClick', e, '#inicio')"
@@ -49,7 +49,7 @@
             Contáctanos
         </a>
     </li>
-    <li>
+    <li class="xl:ml-auto">
         <RouterLink 
             to="/consulta-resultados" 
             class="group relative overflow-hidden flex md:gap-3 py-3 px-6 rounded-full bg-tertiary xl:bg-gradient-to-r xl:from-primary xl:to-secondary after:content-[''] after:absolute after:w-full after:h-full after:top-0 after:left-0 after:-translate-x-full after:bg-secondary xl:after:bg-primary after:opacity-0 after:transitioning hover:after:opacity-100 hover:after:translate-x-0"

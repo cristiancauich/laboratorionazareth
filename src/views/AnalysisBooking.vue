@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <div class="py-12 md:py-20 xl:py-24">
+    <div class="py-12 md:py-20 xl:py-24 bg-light-gray">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 2xl:gap-12">
                 <div class="w-full xl:col-span-5 2xl:col-span-6 ">
@@ -39,7 +39,7 @@
                     </ul>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
-                        <div class="bg-secondary p-6 xl:p-8 rounded-xl text-white" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-secondary p-6 2xl:p-8 rounded-xl text-white" data-aos="fade-up" data-aos-delay="200">
                             <p class="font-montserrat font-semibold text-sm lg:text-base flex items-center gap-3 mb-4 xl:mb-6">
                                 <stethoscope class="text-tertiary" />
                                 Recomendaciones:
@@ -52,7 +52,7 @@
                             </ul>
                         </div>
 
-                        <div class="bg-secondary p-6 xl:p-8 rounded-xl text-white" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-secondary p-6 2xl:p-8 rounded-xl text-white" data-aos="fade-up" data-aos-delay="300">
                             <p class="font-montserrat font-semibold text-sm lg:text-base flex items-center gap-3 mb-4 xl:mb-6">
                                 <lightBulb class="text-tertiary" />
                                 Ideal para:

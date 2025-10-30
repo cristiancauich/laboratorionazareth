@@ -72,7 +72,9 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-8">
 				<div class="md:col-span-2 lg:col-span-1">
 					<div class="w-full md:w-1/2 lg:w-full md:mx-auto lg:mx-0">
-						<img :src="logo" :alt="siteName" width="162" height="144" class="w-auto h-24 md:h-28 xl:h-32 2xl:h-36 mx-auto lg:mx-0">
+						<div class="inline-block bg-white p-4 rounded-xl">
+							<img :src="logo" :alt="siteName" width="162" height="144" class="w-auto h-24 md:h-28 xl:h-32 2xl:h-36 mx-auto lg:mx-0"></img>
+						</div>
 
 						<p class="text-center lg:text-start mt-4 lg:text-sm xl:text-base">
 							Somos un laboratorio de análisis clínicos comprometidos con la salud y el bienestar de nuestros pacientes.
